@@ -1,0 +1,27 @@
+# Ignorar el entorno virtual
+vgc-metrics/share/
+vgc-metrics/
+# Ignorar archivos temporales y cache de Python
+*.pyc
+__pycache__/
+
+# Ignorar configuraciones de IDEs y editores comunes
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignorar datos crudos y procesados
+data/raw_data/
+data/processed_data/
+
+# Ignorar reportes temporales
+reports/*.csv
+reports/*.tmp
+
+# Ignorar logs
+*.log
+
+# Ignorar archivos de sistema
+.DS_Store
+Thumbs.db
