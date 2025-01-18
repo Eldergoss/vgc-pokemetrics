@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Porygon2",
+        "item": "Eviolite",
+        "ability": "Download",
+        "tera_type": "Fighting",
+        "moves": [
+            "Tera Blast",
+            "Ice Beam"
+        ]
+    }
+]
