@@ -10,7 +10,7 @@ link = "https://standings.stalruth.dev/2025/regional-toronto/masters"
 # Ruta donde se guardará el archivo JSON
 ruta_json = "/home/david/vgc-pokemetrics/data/raw_data/link_containeraw.json"
 
-def extract_teams_with_pause(enlace, limit=260, pause_after=20, pause_duration=20, output_file=None):
+def extract_teams_with_pause(enlace, pause_after=20, pause_duration=20, output_file=None):
     # Hacemos una petición HTTP al enlace proporcionado
     response = requests.get(enlace)
     
@@ -31,8 +31,8 @@ def extract_teams_with_pause(enlace, limit=260, pause_after=20, pause_duration=2
     # Lista para almacenar los enlaces
     enlaces = []
     
-    # Iteramos por las filas, limitando a los primeros 'limit' equipos
-    for i, fila in enumerate(filas[:limit]):
+    # Iteramos por todas las filas sin límite
+    for i, fila in enumerate(filas):
         # Dentro de cada fila, buscamos el div con clase "team"
         equipo_div = fila.find("div", class_="team")
         if equipo_div:
@@ -53,5 +53,5 @@ def extract_teams_with_pause(enlace, limit=260, pause_after=20, pause_duration=2
             json.dump(enlaces, f, indent=4)
         print(f"Enlaces guardados en: {output_file}")
 
-# Llamamos a la función para extraer los primeros 260 equipos con pausas cada 20 y guardar los enlaces en un archivo JSON
-extract_teams_with_pause(link, limit=260, pause_after=20, pause_duration=20, output_file=ruta_json)
+# Llamamos a la función sin límite, con pausas cada 20 equipos y guardamos los enlaces en un archivo JSON
+extract_teams_with_pause(link, pause_after=20, pause_duration=20, output_file=ruta_json)
