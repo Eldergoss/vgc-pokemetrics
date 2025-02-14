@@ -1,0 +1,21 @@
+{
+    "mazo_1": [
+      {
+        "cartas_pokemon": ["Pikachu EX", "Marill"]
+      },
+      {
+        "cartas_entrenador": [
+          {
+            "cartas_objetos": []
+          },
+          {
+            "cartas_partidario": []
+          },
+          {
+            "cartas_estadio": []
+          }
+        ]
+      }
+    ]
+  }
+  
