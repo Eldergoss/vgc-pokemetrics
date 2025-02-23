@@ -31,6 +31,7 @@ def analizar_csv(csv_filename):
                      names="Mazo", 
                      values="Frecuencia Absoluta", 
                      title="Distribución de mazos en el Top 33 (Agrupados <5% en 'Otros')")
+        print(fig)
         fig.show()
         
     except FileNotFoundError:
