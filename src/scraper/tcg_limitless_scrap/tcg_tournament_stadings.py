@@ -36,13 +36,16 @@ if response.status_code == 200:
         for competidor in competidores:
             print(f"Rank: {competidor['Rank']}, Nombre: {competidor['Nombre']}, Mazo: {competidor['Mazo']}")
 
-        # Guardar los datos en un archivo CSV
-        with open("competidores_top33.csv", mode="w", newline="", encoding="utf-8") as archivo:
+        # Pedir nombre del torneo y guardar los datos en un archivo CSV
+        nombre_torneo = input("Ingrese el nombre del torneo (formato nombre/mes/año): ")
+        nombre_archivo = f"{nombre_torneo}.csv"  # Crear el nombre del archivo
+        
+        with open(nombre_archivo, mode="w", newline="", encoding="utf-8") as archivo:
             escritor = csv.DictWriter(archivo, fieldnames=["Rank", "Nombre", "Mazo"])
             escritor.writeheader()  # Escribir la cabecera
             escritor.writerows(competidores)  # Escribir los datos
 
-        print("\nDatos guardados en 'competidores_top33.csv'.")
+        print(f"\nDatos guardados en '{nombre_archivo}'.")
     else:
         print("No se encontraron filas con los atributos esperados.")
 else:
